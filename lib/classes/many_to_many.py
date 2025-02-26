@@ -9,7 +9,25 @@ class Article:
         return self._title
     @title.setter
     def title(self, title):
-        if isinstance()
+        if isinstance(title, str) and 5 <= len(title) <= 50 and not hasattr(title, "_title"):
+            self._title = title
+
+    # article property author
+    @property
+    def author(self):
+        self.author
+    @author.setter
+    def author(self, author):
+        if isinstance(author, Author):
+            self.author = author
+    # article property magazine
+    @property
+    def magazine(self):
+        self.magazine
+    @magazine.setter
+    def magazine(self, magazine):
+        if not isinstance(magazine, Magazine):
+            raise TypeError("Must be a type of magazine")
         
 class Author:
     def __init__(self, name):
@@ -24,7 +42,7 @@ class Author:
             self._name = name
 
     def articles(self):
-        pass
+        return self._article
 
     def magazines(self):
         pass
@@ -38,7 +56,7 @@ class Author:
 class Magazine:
     def __init__(self, name, category):
         self.name = name
-        self.category = category
+        self._category = category
 
     @property
     def name(self):

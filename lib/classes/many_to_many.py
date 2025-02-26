@@ -42,8 +42,9 @@ class Author:
         if not isinstance(name, str) and len(name) > 0 and not hasattr(self, "_name"):
             self._name = name
 
-    def articles(self):
-        return self._article
+    def articles(self, article):
+        if isinstance(article, Article):
+            return [article for article in Article.all if article.author == self]
 
     def magazines(self, magazine):
         if isinstance(magazine, Magazine):

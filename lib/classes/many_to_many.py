@@ -32,6 +32,7 @@ class Article:
 class Author:
     def __init__(self, name):
         self.name = name
+        self.magazine = []
 
     @property
     def name(self):
@@ -44,8 +45,9 @@ class Author:
     def articles(self):
         return self._article
 
-    def magazines(self):
-        pass
+    def magazines(self, magazine):
+        if isinstance(magazine, Magazine):
+            return list(set([article.magazine for article in self._article]))
 
     def add_article(self, magazine, title):
         pass

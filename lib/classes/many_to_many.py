@@ -60,7 +60,7 @@ class Article:
 class Author:
     def __init__(self, name):
         self._name = name
-        self._articles = [] #->store articles written by the author
+        self._articles = [] #store articles written by the author
 
     @property
     def name(self):
@@ -87,10 +87,10 @@ class Author:
         return new_article
 
     def topic_areas(self):
-        if  not self._articles: #->checks if author has no articles
+        if  not self._articles: #Checks if author has no articles
              return None
     
-        categories = {article.magazine.category for article in self._articles}  #->set comprehension to get unique categories
+        categories = {article.magazine.category for article in self._articles}  #Set comprehension to get unique categories
         return list(categories)
         
         
@@ -99,7 +99,7 @@ class Magazine:
     def __init__(self, name, category):
         self.name = name
         self._category = category
-        self.articles = [] #->empty list _articles to store published articles.
+        self.articles = [] #Empty list _articles to store published articles.
 
     def article_titles(self):
         if not self._articles:
@@ -135,7 +135,7 @@ class Magazine:
         if not self._articles:
             return None
         return [article.title for article in self._articles]
-
+s
     def contributing_authors(self):
         author_counts = {}
         for article in self.articles:
